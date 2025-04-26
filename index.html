@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disk Scheduling Algorithm Simulator</title>
+    <link rel="stylesheet" href="./assets/CSS/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="panel">
+      <h1>Disk Scheduling Algorithm Simulator</h1>
+      <div class="algorithm-info">
+        <p>This simulator demonstrates three disk scheduling algorithms: FCFS (First-Come, First-Served), SCAN (Elevator), and C-SCAN (Circular SCAN).</p>
+      </div>
+      
+      <div class="flex-row">
+        <div class="input-group">
+          <label for="maxCylinder">Maximum Cylinder (0-4999):</label>
+          <input type="number" id="maxCylinder" min="1" max="4999" value="199">
+        </div>
+        
+        <div class="input-group">
+          <label for="initialHead">Initial Head Position:</label>
+          <input type="number" id="initialHead" min="0" value="50">
+        </div>
+        
+        <div class="input-group">
+          <label for="requestCount">Number of Requests:</label>
+          <input type="number" id="requestCount" min="1" max="1000" value="8">
+        </div>
+      </div>
+      
+      <div class="input-group">
+        <button id="generateRequests">Generate Random Requests</button>
+        <button id="addRequest">Add Manual Request</button>
+        <button id="clearRequests">Clear Requests</button>
+      </div>
+      
+      <div class="request-list" id="requestsList"></div>
+      
+      <div class="button-group">
+        <button id="runFCFS">Run FCFS</button>
+        <button id="runSCAN">Run SCAN</button>
+        <button id="runCSCAN">Run C-SCAN</button>
+        <button id="runAll">Run All</button>
+      </div>
+    </div>
+    
+    <div class="panel">
+      <div class="tab">
+        <button class="tablinks active" onclick="openTab(event, 'visual')">Visual</button>
+        <button class="tablinks" onclick="openTab(event, 'results')">Results</button>
+        <button class="tablinks" onclick="openTab(event, 'comparison')">Comparison</button>
+      </div>
+      
+      <div id="visual" class="tabcontent" style="display: block;">
+        <h3>Disk Head Movement Visualization</h3>
+        <div class="canvas-container">
+          <canvas id="visualizationCanvas" width="1100" height="400"></canvas>
+        </div>
+        <div class="result-summary" id="visualSummary">
+          <p>Run an algorithm to see the visualization.</p>
+        </div>
+      </div>
+      
+      <div id="results" class="tabcontent">
+        <h3>Algorithm Results</h3>
+        <table id="resultsTable">
+          <thead>
+            <tr>
+              <th>Step</th>
+              <th>From</th>
+              <th>To</th>
+              <th>Movement</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Results will be inserted here -->
+          </tbody>
+        </table>
+        <div class="result-summary" id="resultSummary">
+          <p>Run an algorithm to see the results.</p>
+        </div>
+      </div>
+      
+      <div id="comparison" class="tabcontent">
+        <h3>Algorithm Comparison</h3>
+        <table id="comparisonTable">
+          <thead>
+            <tr>
+              <th>Algorithm</th>
+              <th>Total Movement</th>
+              <th>Average Movement</th>
+              <th>Improvement vs FCFS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Comparison will be inserted here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+<script src="./assets/JS/script.js"></script>
+</body>
+</html>
