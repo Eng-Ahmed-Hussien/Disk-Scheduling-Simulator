@@ -6,9 +6,7 @@
       margin: 0 auto;
       padding: 20px;
       background-color: #f7f9fc;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+
     }
     
     h1, h2, h3 {
